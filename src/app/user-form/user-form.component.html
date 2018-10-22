@@ -8,7 +8,7 @@
             <input type="text" class="form-control" id="firstName"
                     required
                     [(ngModel)]="model.firstName" name="firstName"
-                    #name="ngModel">
+                    #firstName="ngModel">
             <div [hidden]="firstName.valid || firstName.pristine"
               class="alert alert-danger">
               First Name is required
@@ -21,7 +21,7 @@
           <input type="text" class="form-control" id="lastName"
                   required
                   [(ngModel)]="model.lastName" name="lastName"
-                  #name="ngModel">
+                  #lastName="ngModel">
           <div [hidden]="lastName.valid || lastName.pristine"
             class="alert alert-danger">
             Last Name is required
@@ -33,7 +33,7 @@
             <input type="text" class="form-control" id="email" 
               required = true
               [(ngModel)]="model.email" name="email"
-              #description="ngModel">
+              #email="ngModel">
             <div [hidden]="email.valid || email.pristine"
               class="alert alert-danger">
               Email is required
@@ -45,7 +45,7 @@
           <input type="text" class="form-control" id="password" 
             required = true
             [(ngModel)]="model.password" name="password"
-            #description="ngModel">
+            #password="ngModel">
           <div [hidden]="password.valid || password.pristine"
             class="alert alert-danger">
             Password is required
