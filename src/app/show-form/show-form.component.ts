@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import {Show} from '../models/show'
 import { NullAstVisitor } from '@angular/compiler';
+import {ShowsService} from '../shows.service'
 
 @Component({
   selector: 'app-show-form',
