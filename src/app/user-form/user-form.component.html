@@ -2,7 +2,7 @@
   <div [hidden]="submitted">
       <h1>User Form</h1>
       <form (ngSubmit)="onSubmit()" #userForm="ngForm">
-        <!-- name input -->
+        <!-- First Name input -->
         <div class="form-group">
             <label for="firstName">First Name</label>
             <input type="text" class="form-control" id="firstName"
@@ -15,7 +15,7 @@
             </div>
         </div>
 
-        <!-- description input -->
+        <!-- Last Name input -->
         <div class="form-group">
           <label for="lastName">Last Name</label>
           <input type="text" class="form-control" id="lastName"
@@ -27,7 +27,7 @@
             Last Name is required
           </div>
       </div>
-
+              <!-- Email Input -->
         <div class="form-group">
             <label for="email">Email</label>
             <input type="text" class="form-control" id="email" 
@@ -39,7 +39,7 @@
               Email is required
             </div>
         </div>
-
+              <!-- Password Input  -->
         <div class="form-group">
           <label for="password">Password</label>
           <input type="text" class="form-control" id="password" 

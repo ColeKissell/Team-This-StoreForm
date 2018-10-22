@@ -4,7 +4,9 @@ import { FormsModule }   from '@angular/forms';
 
 import { AppComponent }  from './app.component';
 import {ShowFormComponent} from './show-form/show-form.component';
-import { UserFormComponent } from './user-form/user-form.component'
+import { UserFormComponent } from './user-form/user-form.component';
+import { LoginComponent } from './login/login.component';
+import { LoginFormComponent } from './login-form/login-form.component'
 
 @NgModule({
   imports: [
@@ -14,7 +16,9 @@ import { UserFormComponent } from './user-form/user-form.component'
   declarations: [
     AppComponent,
     ShowFormComponent,
-    UserFormComponent
+    UserFormComponent,
+    LoginComponent,
+    LoginFormComponent
   ],
   providers: [],
   bootstrap: [ AppComponent ]
