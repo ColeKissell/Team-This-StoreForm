@@ -3,7 +3,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule }   from '@angular/forms';
 
 import { AppComponent }  from './app.component';
-import {ShowFormComponent} from './show-form/show-form.component'
+import {ShowFormComponent} from './show-form/show-form.component';
+import { UserFormComponent } from './user-form/user-form.component'
 
 @NgModule({
   imports: [
@@ -12,7 +13,8 @@ import {ShowFormComponent} from './show-form/show-form.component'
   ],
   declarations: [
     AppComponent,
-    ShowFormComponent
+    ShowFormComponent,
+    UserFormComponent
   ],
   providers: [],
   bootstrap: [ AppComponent ]

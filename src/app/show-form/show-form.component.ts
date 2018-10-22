@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import {Show} from '../show'
+import {Show} from '../models/show'
 import { NullAstVisitor } from '@angular/compiler';
 
 @Component({
