@@ -5,7 +5,6 @@ import { FormsModule }   from '@angular/forms';
 import { AppComponent }  from './app.component';
 import {ShowFormComponent} from './show-form/show-form.component';
 import { UserFormComponent } from './user-form/user-form.component';
-// import { LoginComponent } from './login/login.component';
 import { LoginFormComponent } from './login-form/login-form.component'
 
 @NgModule({
@@ -17,7 +16,6 @@ import { LoginFormComponent } from './login-form/login-form.component'
     AppComponent,
     ShowFormComponent,
     UserFormComponent,
-    // LoginComponent,
     LoginFormComponent
   ],
   providers: [],
