@@ -19,11 +19,8 @@ export class ShowFormComponent implements OnInit {
   constructor(){}
 
 
-  onSubmit(){ this.submitted = true; fetch('https://hapi-practice-ftjjbqgvls.now.sh/shows').then(function(response) {
-    return response.json()
-  }).then(function(myJson) {
-    console.log(myJson);
-  });
+  onSubmit(){ this.submitted = true; 
+  
   // console.log(this.convertShow)
     // return this.convertShow;
   };
@@ -46,6 +43,13 @@ export class ShowFormComponent implements OnInit {
     console.log(typeof(newJsonObject))
   }
   
+  getShows(){
+      fetch('https://hapi-practice-ftjjbqgvls.now.sh/shows').then(function(response) {
+      return response.json()
+    }).then(function(myJson) {
+      console.log(myJson);
+    });
+  }
 
 }
 
