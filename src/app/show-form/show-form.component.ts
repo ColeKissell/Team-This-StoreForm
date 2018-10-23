@@ -19,7 +19,7 @@ export class ShowFormComponent implements OnInit {
   constructor(){}
 
 
-  onSubmit(){ this.submitted = true; fetch('http://localhost:3000/users').then(function(response) {
+  onSubmit(){ this.submitted = true; fetch('https://hapi-practice-ftjjbqgvls.now.sh/shows').then(function(response) {
     return response.json()
   }).then(function(myJson) {
     console.log(myJson);
