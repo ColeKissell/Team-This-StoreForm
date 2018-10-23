@@ -57,7 +57,8 @@
         <!-- submit button -->
         <button type="submit" class="btn btn-success" [disabled]="!showForm.form.valid">Submit</button>
         <button type="button" class="btn btn-success" (click)="convertShow()">Convert</button>
-        <button type="button" class="btn btn-default" (click)="newShow(); showForm.reset()">New Show</button> 
+        <button type="button" class="btn btn-default" (click)="newShow(); showForm.reset()">New Show</button>
+        <button type="button" class="btn btn-default" (click)="getShows();">Get Shows</button> 
         </form>
   </div>
 
