@@ -51,14 +51,14 @@ export class ShowFormComponent implements OnInit {
   }
   
   getShows(){
-      fetch('https://hapi-practice-adlzmjatlv.now.sh/shows').then(function(response) {
+      fetch('https://hapi-practice-uodxjalzjs.now.sh/shows').then(function(response) {
       return response.json()
     }).then(function(myJson) {
       console.log(myJson);
     });
   }
   postShow(){
-    fetch('https://hapi-practice-ftjjbqgvls.now.sh/shows', {
+    fetch('https://hapi-practice-uodxjalzjs.now.sh/shows', {
         method: "POST", // *GET, POST, PUT, DELETE, etc.
         mode: "cors", // no-cors, cors, *same-origin
         cache: "no-cache", // *default, no-cache, reload, force-cache, only-if-cached
