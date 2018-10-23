@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import {Show} from '../models/show'
 // import { NullAstVisitor } from '@angular/compiler';
 // import {ShowsService} from '../shows.service'
@@ -9,13 +9,29 @@ import {Show} from '../models/show'
   templateUrl: './show-form.component.html',
   styleUrls: ['./show-form.component.css']
 })
-export class ShowFormComponent {
+export class ShowFormComponent implements OnInit {
+  
 
   model = new Show("","",null,"")
   
   submitted = false;
 
-  onSubmit(){ this.submitted = true;}
+  constructor(){}
+
+
+  onSubmit(){ this.submitted = true; fetch('http://localhost:3000/users').then(function(response) {
+    return response.json()
+  }).then(function(myJson) {
+    console.log(myJson);
+  });
+  // console.log(this.convertShow)
+    // return this.convertShow;
+  };
+  ngOnInit(){
+    
+  
+  }
+  
   
   newShow(){
     this.model = new Show('','',0,'')
@@ -29,5 +45,7 @@ export class ShowFormComponent {
     console.log(newJsonObject);
     console.log(typeof(newJsonObject))
   }
+  
 
 }
+
