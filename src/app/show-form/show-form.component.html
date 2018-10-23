@@ -56,6 +56,7 @@
 
         <!-- submit button -->
         <button type="submit" class="btn btn-success" [disabled]="!showForm.form.valid">Submit</button>
+        <button type="button" class="btn btn-success" (click)="convertShow()">Convert</button>
         <button type="button" class="btn btn-default" (click)="newShow(); showForm.reset()">New Show</button> 
         </form>
   </div>
@@ -80,6 +81,7 @@
       </div>
       <br>
       <button class="btn btn-primary" (click)="submitted=false">Edit</button>
+      
   </div>
 </div>
 
