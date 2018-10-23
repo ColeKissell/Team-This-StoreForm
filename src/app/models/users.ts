@@ -1,11 +1,14 @@
 export class User {
     constructor(
-        public firstName: String,
-        public lastName: String,
-        public email: String,
-        public password: String,
-        public history: String,
-        public cart: String,
-        public payment: Number
+        public Role: String,
+        public Email: String,
+        public FirstName: String,
+        public LastName: String,
+        public Password: String,
+        public Payment: Number,
+        public Cart: String,
+        public History: String
+      
+       
     ){}
 }

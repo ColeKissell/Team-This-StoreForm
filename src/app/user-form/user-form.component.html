@@ -2,14 +2,15 @@
   <div [hidden]="submitted">
       <h1>User Form</h1>
       <form (ngSubmit)="onSubmit()" #userForm="ngForm">
+
         <!-- First Name input -->
         <div class="form-group">
-            <label for="firstName">First Name</label>
-            <input type="text" class="form-control" id="firstName"
+            <label for="FirstName">First Name</label>
+            <input type="text" class="form-control" id="FirstName"
                     required
-                    [(ngModel)]="model.firstName" name="firstName"
-                    #firstName="ngModel">
-            <div [hidden]="firstName.valid || firstName.pristine"
+                    [(ngModel)]="model.FirstName" name="FirstName"
+                    #FirstName="ngModel">
+            <div [hidden]="FirstName.valid || FirstName.pristine"
               class="alert alert-danger">
               First Name is required
             </div>
@@ -17,36 +18,36 @@
 
         <!-- Last Name input -->
         <div class="form-group">
-          <label for="lastName">Last Name</label>
-          <input type="text" class="form-control" id="lastName"
+          <label for="LastName">Last Name</label>
+          <input type="text" class="form-control" id="LastName"
                   required
-                  [(ngModel)]="model.lastName" name="lastName"
-                  #lastName="ngModel">
-          <div [hidden]="lastName.valid || lastName.pristine"
+                  [(ngModel)]="model.LastName" name="LastName"
+                  #LastName="ngModel">
+          <div [hidden]="LastName.valid || LastName.pristine"
             class="alert alert-danger">
             Last Name is required
           </div>
       </div>
               <!-- Email Input -->
         <div class="form-group">
-            <label for="email">Email</label>
-            <input type="text" class="form-control" id="email" 
+            <label for="Email">Email</label>
+            <input type="text" class="form-control" id="Email" 
               required = true
-              [(ngModel)]="model.email" name="email"
-              #email="ngModel">
-            <div [hidden]="email.valid || email.pristine"
+              [(ngModel)]="model.Email" name="Email"
+              #Email="ngModel">
+            <div [hidden]="Email.valid || Email.pristine"
               class="alert alert-danger">
               Email is required
             </div>
         </div>
               <!-- Password Input  -->
         <div class="form-group">
-          <label for="password">Password</label>
-          <input type="text" class="form-control" id="password" 
+          <label for="Password">Password</label>
+          <input type="text" class="form-control" id="Password" 
             required = true
-            [(ngModel)]="model.password" name="password"
-            #password="ngModel">
-          <div [hidden]="password.valid || password.pristine"
+            [(ngModel)]="model.Password" name="Password"
+            #Password="ngModel">
+          <div [hidden]="Password.valid || Password.pristine"
             class="alert alert-danger">
             Password is required
           </div>
@@ -56,6 +57,8 @@
         
 
         <!-- submit button -->
+        <button type="button" class="btn btn-success" (click)="convertUser()">Convert</button>
+        <button type="button" class="btn btn-default" (click)="getUsers();">Get Users</button> 
         <button type="submit" class="btn btn-success" [disabled]="!userForm.form.valid">Submit</button>
         <button type="button" class="btn btn-default" (click)="newUser(); userForm.reset()">New User</button> 
         </form>
@@ -65,19 +68,19 @@
       <h2>You submitted the following:</h2>
       <div class="row">
         <div class="col-xs-3">firstName</div>
-        <div class="col-xs-9  pull-left">{{ model.firstName }}</div>
+        <div class="col-xs-9  pull-left">{{ model.FirstName }}</div>
       </div>
       <div class="row">
         <div class="col-xs-3">lastName</div>
-        <div class="col-xs-9 pull-left">{{ model.lastName }}</div>
+        <div class="col-xs-9 pull-left">{{ model.LastName }}</div>
       </div>
       <div class="row">
           <div class="col-xs-3">email</div>
-          <div class="col-xs-9 pull-left">{{ model.email }}</div>
+          <div class="col-xs-9 pull-left">{{ model.Email }}</div>
         </div>
       <div class="row">
         <div class="col-xs-3">password</div>
-        <div class="col-xs-9 pull-left">{{ model.password }}</div>
+        <div class="col-xs-9 pull-left">{{ model.Password }}</div>
       </div>
       <br>
       <button class="btn btn-primary" (click)="submitted=false">Edit</button>
