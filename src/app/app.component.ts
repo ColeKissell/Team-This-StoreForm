@@ -18,13 +18,8 @@ export class AppComponent implements OnInit{
   getPosts() : void {
     this.srv.getData(this.Url)
       .subscribe(
-        data => this.posts.push(...data),
-        error=> console.log(error)
-      )
-      this.srv.getData(this.Url1)
-      .subscribe(
-        data => this.posts.push(...data),
-        error=> console.log(error)
+        (data) => {this.posts.push(...data)},
+        (error)=> {console.log(error)}
       )
   }
  

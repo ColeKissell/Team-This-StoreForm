@@ -6,7 +6,11 @@
   <div class="item" *ngFor="let post of posts">
     <h3 class="title">{{post.name}}</h3>
     <div class="item-body">
-      <!-- {{post.body}} -->
+      {{post.description}}
+      <br/>
+      {{post.price}}
+      <br/>
+      {{post.genre}}
     </div>
   </div>
 </div>
