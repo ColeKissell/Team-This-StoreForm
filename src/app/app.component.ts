@@ -9,7 +9,7 @@ import { FetchdataService } from './fetchdata-service.service';
 export class AppComponent implements OnInit{
   posts=[''];
   title='Angular HttpClient';
-  Url = "http://localhost:3000/shows"
+  Url = "https://hapi-practice-uodxjalzjs.now.sh/shows"
   Url1 = "https://jsonplaceholder.typicode.com/posts"
 
   // inject FetchdataService service
@@ -17,6 +17,11 @@ export class AppComponent implements OnInit{
 
   getPosts() : void {
     this.srv.getData(this.Url)
+      .subscribe(
+        data => this.posts.push(...data),
+        error=> console.log(error)
+      )
+      this.srv.getData(this.Url1)
       .subscribe(
         data => this.posts.push(...data),
         error=> console.log(error)
