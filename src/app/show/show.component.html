@@ -1,0 +1,24 @@
+<h2>My Shows</h2>
+<!-- <div>
+  <label>Show name:
+    <input #showName />
+  </label>
+   <button (click)="add(showName.value); showName.value=''">
+    add
+  </button>
+</div> -->
+<div>
+  <ul>
+    <li *ngFor="let show of shows">
+      <a routerLink="/detail/{{show.id}}">
+        <span>{{show.id}}</span> {{show.name}}
+      </a>
+      <button class="delete" title="delete show"
+      (click)="delete(show)">x</button>
+    </li>
+  </ul>
+</div>  
+
+
+
+
