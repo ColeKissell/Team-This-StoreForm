@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {Show} from '../models/show'
 import {ShowService} from '../show.service'
-import{ShowFormComponent} from '../show-form/show-form.component'
+// import{ShowFormComponent} from '../show-form/show-form.component'
 
 @Component({
   selector: 'app-show',
@@ -24,10 +24,10 @@ export class ShowComponent implements OnInit {
     .subscribe(shows => this.shows = shows)
   }
 
-  add(id: number, name: string, description: string ,price: number, genre: string): void {
+  add(_id: string, name: string, description: string ,price: number, genre: string): void {
     name = name.trim();
     if (!name || !description || !price || !genre) { return; }
-    this.showService.addShow({id, name, description, price, genre } as Show)
+    this.showService.addShow({_id, name, description, price, genre } as Show)
       .subscribe(show => {
         this.shows.push(show);
       });

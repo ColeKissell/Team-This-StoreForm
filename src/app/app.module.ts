@@ -12,7 +12,7 @@ import { ShowComponent } from './show/show.component';
 import { ShowSearchComponent } from './show-search/show-search.component';
 import { MessagesComponent } from './messages/messages.component';
 
-import {ShowFormComponent} from './show-form/show-form.component';
+// import {ShowFormComponent} from './show-form/show-form.component';
 import { UserFormComponent } from './user-form/user-form.component';
 // import { LoginFormComponent } from './login-form/login-form.component';
 
@@ -28,7 +28,7 @@ import { UserFormComponent } from './user-form/user-form.component';
   ],
   declarations: [
     AppComponent,
-    ShowFormComponent,
+    // ShowFormComponent,
     UserFormComponent,
     // LoginFormComponent,
     ShowDetailComponent,

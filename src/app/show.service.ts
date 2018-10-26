@@ -14,7 +14,7 @@ const httpOptions = {
 @Injectable({ providedIn: 'root'})
 export class ShowService {
 
-  private showsUrl = 'http://localhost:3000/shows';
+  private showsUrl = 'https://hapi-practice-uodxjalzjs.now.sh/shows';
 
   constructor(
     private http: HttpClient,
@@ -41,7 +41,7 @@ export class ShowService {
       );
   }
 // get show by id. will 404 if id not found
-  getShow(id: number): Observable<Show> {
+  getShow(id): Observable<Show> {
     const url = `${this.showsUrl}/${id}`;
     return this.http.get<Show>(url).pipe(
       tap(_ => this.log(`fetched show id=${id}`)),
@@ -64,13 +64,13 @@ export class ShowService {
   // post: add new show to server
   addShow (show: Show): Observable<Show> {
     return this.http.post<Show>(this.showsUrl, show, httpOptions).pipe(
-      tap((show: Show) => this.log(`added show w/ id=${show.id}`)),
+      tap((show: Show) => this.log(`added show w/ id=${show._id}`)),
       catchError(this.handleError<Show>('addShow'))
     );
   }
   // delete: delete the show from server
   deleteShow (show: Show | number): Observable<Show> {
-    const id = typeof show === 'number' ? show : show.id;
+    const id = typeof show === 'number' ? show : show._id;
     const url = `${this.showsUrl}/${id}`;
   
     return this.http.delete<Show>(url, httpOptions).pipe(
@@ -80,10 +80,10 @@ export class ShowService {
   }
   // put: update show on server
   updateShow (show: Show): Observable<any> {
-    return this.http.put(this.showsUrl, show, httpOptions).pipe(
-      tap(_ => this.log(`updated show id=${show.id}`)),
-      catchError(this.handleError<any>('updateShow'))
-    );
+    return this.http.patch(this.showsUrl, show, httpOptions).pipe(
+      tap(_ => this.log(`updated show id=${show._id}`)),
+      catchError(this.handleError<any>('updateShow')));
+
   }
   /**
    * Handle Http operation that failed.
