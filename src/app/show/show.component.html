@@ -1,16 +1,16 @@
 <h2>My Shows</h2>
 <div>
-  <label>Show name:
+  <!-- <label>Show name:
     <input #showName />
   </label>
    <button (click)="add(showName.value); showName.value=''">
     add
-  </button>
+  </button> -->
 </div>
 <div>
   <ul class="heroes">
     <li *ngFor="let show of shows">
-      <a routerLink="/detail/{{show.id}}">
+      <a routerLink="/shows/{{show.id}}">
         <span class="badge">{{show.id}} </span> {{show.name}}
       </a>
       

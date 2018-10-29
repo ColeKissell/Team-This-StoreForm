@@ -8,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 export class AppComponent implements OnInit{
   posts=[''];
   title='Angular HttpClient';
-  Url = "https://hapi-practice-uodxjalzjs.now.sh/shows"
+  Url = "https://hapi-practice-uodxjalzjs.now.sh/"
 
 
  

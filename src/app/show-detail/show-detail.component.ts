@@ -24,7 +24,8 @@ export class ShowDetailComponent implements OnInit {
     this.getShow();
   }
   getShow(): void {
-    const id = +this.route.snapshot.paramMap.get('id');
+    // const id = +this.route.snapshot.paramMap.get('id');
+    const id = this.show._id;
     this.showService.getShow(id)
       .subscribe(show => this.show = show);
   }

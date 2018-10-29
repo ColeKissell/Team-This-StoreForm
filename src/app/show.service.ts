@@ -28,16 +28,16 @@ export class ShowService {
     )
   }
   /** GET hero by id. Return `undefined` when id not found */
-  getShowNo404<Data>(id: number): Observable<Show> {
-    const url = `${this.showsUrl}/?id=${id}`;
+  getShowNo404<Data>(_id): Observable<Show> {
+    const url = `${this.showsUrl}/${_id}`;
     return this.http.get<Show[]>(url)
       .pipe(
         map(shows => shows[0]), // returns a {0|1} element array
         tap(h => {
           const outcome = h ? `fetched` : `did not find`;
-          this.log(`${outcome} show id=${id}`);
+          this.log(`${outcome} show id=${_id}`);
         }),
-        catchError(this.handleError<Show>(`getShow id=${id}`))
+        catchError(this.handleError<Show>(`getShow id=${_id}`))
       );
   }
 // get show by id. will 404 if id not found
