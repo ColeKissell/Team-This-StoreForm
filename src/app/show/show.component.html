@@ -7,13 +7,12 @@
     add
   </button> -->
 </div>
-<div>
-  <ul class="heroes">
+<div class="heroes">
+  <ul>
     <li *ngFor="let show of shows">
-      <a routerLink="/shows/{{show.id}}">
-        <span class="badge">{{show.id}} </span> {{show.name}}
+      <a routerLink="/shows/{{show._id}}">
+        <span class="badge">{{show._id}}</span>{{show.name}}
       </a>
-      
       <button class="delete" title="delete show"
       (click)="delete(show)">x</button>
     </li>

@@ -13,7 +13,6 @@ import { ShowService }  from '../show.service';
 
 export class ShowDetailComponent implements OnInit {
   @Input() show: Show;
-  
   constructor(
     private route: ActivatedRoute,
     private showService: ShowService,
@@ -24,8 +23,7 @@ export class ShowDetailComponent implements OnInit {
     this.getShow();
   }
   getShow(): void {
-    // const id = +this.route.snapshot.paramMap.get('id');
-    const id = this.show._id;
+    const id = this.route.snapshot.paramMap.get('id');
     this.showService.getShow(id)
       .subscribe(show => this.show = show);
   }

@@ -47,10 +47,10 @@
   .grid-pad > [class*='col-']:last-of-type {
     padding-right: 20px;
   }
-  @media (max-width: 600px) {
+  @media (max-width: 800px) {
     .module {
       font-size: 10px;
-      max-height: 75px; }
+      max-height: 100px; }
   }
   @media (max-width: 1024px) {
     .grid {

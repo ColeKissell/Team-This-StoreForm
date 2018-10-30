@@ -8,7 +8,7 @@ import {Show} from './models/show';
 import { MessageService } from './message.service';
 
 const httpOptions = {
-  headers: new HttpHeaders({ 'Content-Type': 'application/json' })
+  headers: new HttpHeaders({ 'Content-Type': 'application/json', })
 };
 
 @Injectable({ providedIn: 'root'})
@@ -28,20 +28,21 @@ export class ShowService {
     )
   }
   /** GET hero by id. Return `undefined` when id not found */
-  getShowNo404<Data>(_id): Observable<Show> {
-    const url = `${this.showsUrl}/${_id}`;
+  getShowNo404<Data>(id): Observable<Show> {
+    const url = `${this.showsUrl}/${id}`;
     return this.http.get<Show[]>(url)
       .pipe(
         map(shows => shows[0]), // returns a {0|1} element array
         tap(h => {
           const outcome = h ? `fetched` : `did not find`;
-          this.log(`${outcome} show id=${_id}`);
+          this.log(`${outcome} show id=${id}`);
         }),
-        catchError(this.handleError<Show>(`getShow id=${_id}`))
+        catchError(this.handleError<Show>(`getShow id=${id}`))
       );
   }
 // get show by id. will 404 if id not found
   getShow(id): Observable<Show> {
+    
     const url = `${this.showsUrl}/${id}`;
     return this.http.get<Show>(url).pipe(
       tap(_ => this.log(`fetched show id=${id}`)),
@@ -69,8 +70,8 @@ export class ShowService {
     );
   }
   // delete: delete the show from server
-  deleteShow (show: Show | number): Observable<Show> {
-    const id = typeof show === 'number' ? show : show._id;
+  deleteShow (show: Show | string): Observable<Show> {
+    const id = typeof show === 'string' ? show : show._id;
     const url = `${this.showsUrl}/${id}`;
   
     return this.http.delete<Show>(url, httpOptions).pipe(
