@@ -9,8 +9,6 @@ export class AppComponent implements OnInit{
   posts=[''];
   title='Angular HttpClient';
   Url = "https://hapi-practice-uodxjalzjs.now.sh/"
-
-
  
   ngOnInit(){
   }

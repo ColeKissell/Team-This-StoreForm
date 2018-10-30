@@ -1,78 +1,43 @@
-// // import { Component, OnInit } from '@angular/core';
-// import {Component,OnInit} from '@angular/core';
-// import {Show} from '../models/show'
-// // import { NullAstVisitor } from '@angular/compiler';
-// // import {ShowsService} from '../shows.service'
-// // import { jsonpCallbackContext } from '@angular/common/http/src/module';
+import {Component,OnInit, Input} from '@angular/core';
+import {Show} from '../models/show'
+import {ShowService} from '../show.service'
+import { ActivatedRoute } from '@angular/router';
+// import { Location } from '@angular/common';
+@Component({
+  selector: 'app-show-form',
+  templateUrl: './show-form.component.html',
+  styleUrls: ['./show-form.component.css']
+})
+export class ShowFormComponent implements OnInit {
+  @Input() show: Show;
 
-// @Component({
-//   selector: 'app-show-form',
-//   templateUrl: './show-form.component.html',
-//   styleUrls: ['./show-form.component.css']
-// })
-// export class ShowFormComponent implements OnInit {
+  model = new Show('',"","",null,"")
   
+  submitted = false;
 
-//   model = new Show(null,"","",null,"")
-  
-//   submitted = false;
+  constructor(
+    private route: ActivatedRoute,
+    private showService: ShowService,
+    // private location: Location,
+  ){ }
 
-//   constructor(){     }
+  ngOnInit(){
+    this.getShow();
+  }
 
+  getShow(): void {
+    const id = this.route.snapshot.paramMap.get('id');
+    this.showService.getShow(id)
+      .subscribe(show => this.show = show);
+  }
 
-
-
-//   onSubmit(){ this.submitted = true;
-//     this.postShow();
-//   }
-
-
-
-
-  
-
-//   ngOnInit(){
+  onSubmit(){ this.submitted = true;
     
-  
-//   }
-  
-  
-//   newShow(){
-//     this.model = new Show(null,'','',0,'')
-//   }
+  }
 
-//   convertShow(){
-//     const test = JSON.stringify(this.model);
-//     console.log(test);
+  newShow(){
+    this.model = new Show('','','',0,'')
+  }
 
-//     const newJsonObject=JSON.parse(test)
-//     console.log(newJsonObject);
-//     return test
-//   }
-  
-//   getShows(){
-//       fetch('https://hapi-practice-uodxjalzjs.now.sh/shows').then(function(response) {
-//       return response.json()
-//     }).then(function(myJson) {
-//       console.log(myJson);
-//     });
-//   }
-//   postShow(){
-//     fetch('https://hapi-practice-uodxjalzjs.now.sh/shows', {
-//         method: "POST", // *GET, POST, PUT, DELETE, etc.
-//         mode: "cors", // no-cors, cors, *same-origin
-//         cache: "no-cache", // *default, no-cache, reload, force-cache, only-if-cached
-//         credentials: "same-origin", // include, same-origin, *omit
-//         headers: {
-//             "Content-Type": "application/json; charset=utf-8",
-//             // "Content-Type": "application/x-www-form-urlencoded",
-//         },
-//         redirect: "follow", // manual, *follow, error
-//         referrer: "no-referrer", // no-referrer, *client
-//         body: this.convertShow()  // body data type must match "Content-Type" header
-//     })
-//     .then(response => response.json());
-//   } // parses response to JSON
-  
-// }
+}
 

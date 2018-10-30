@@ -16,9 +16,11 @@ export class ShowDetailComponent implements OnInit {
   constructor(
     private route: ActivatedRoute,
     private showService: ShowService,
-    private location: Location
+    private location: Location,
   ) { }
 
+    editable = true;
+    
   ngOnInit(): void {
     this.getShow();
   }
@@ -30,8 +32,11 @@ export class ShowDetailComponent implements OnInit {
   goBack(): void {
     this.location.back();
   }
-  save(): void {
-    this.showService.updateShow(this.show)
-      .subscribe(() => this.goBack());
+  // save(): void {
+  //   this.showService.updateShow(this.show)
+  //     .subscribe(() => this.goBack());
+  // }
+  edit(): void {
+    this.editable = !this.editable;
   }
 }

@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {Show} from '../models/show'
 import {ShowService} from '../show.service'
-// import{ShowFormComponent} from '../show-form/show-form.component'
 
 @Component({
   selector: 'app-show',
